@@ -1,0 +1,266 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 18 nov. 2025, 20:03:06
+    Author     : MINEDUCYT
+*/
+
+/* ========================================================= */
+/* --- 1. RESET Y ESTRUCTURA BASE --- */
+/* ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    /* Paleta de colores */
+    --color-sidebar: #1e293b;
+    --color-sidebar-header: #0f172a;
+    --color-accent: #38bdf8; /* Azul claro (Principal) */
+    --color-background: #f4f6f9;
+    --color-text-light: #cbd5e1;
+    --color-text-dark: #1e293b;
+    --color-success: #10b981;
+    --color-danger: #ef4444;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.header-title {
+    margin-bottom: 30px;
+    color: var(--color-text-dark);
+}
+
+/* ========================================================= */
+/* --- 2. SIDEBAR (Barra Lateral) --- */
+/* ========================================================= */
+
+.sidebar {
+    width: 260px;
+    background-color: var(--color-sidebar);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: var(--color-sidebar-header);
+    text-align: center;
+    border-bottom: 1px solid #334155;
+}
+
+.sidebar-header h3 {
+    color: var(--color-accent);
+    letter-spacing: 1px;
+}
+
+.user-info {
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    border-bottom: 1px solid #334155;
+}
+
+.user-info span {
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.menu li a:hover,
+.menu li a.active {
+    background-color: #334155;
+    color: #fff;
+    border-left-color: var(--color-accent);
+}
+
+.menu li a i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.logout-item {
+    margin-top: auto;
+    border-top: 1px solid #334155;
+}
+
+.logout-item a {
+    color: var(--color-danger) !important;
+}
+
+.logout-item a:hover {
+    background-color: #450a0a !important;
+    border-left-color: var(--color-danger) !important;
+}
+
+/* ========================================================= */
+/* --- 3. DASHBOARD (Tarjetas) --- */
+/* ========================================================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--color-accent);
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-text-dark);
+}
+
+.icon-bg {
+    float: right;
+    font-size: 3rem;
+    color: #f1f5f9;
+}
+
+/* Colores específicos para tarjetas */
+.card-jefes {
+    border-left-color: #8b5cf6;
+}
+.card-inspectores {
+    border-left-color: var(--color-success);
+}
+.card-reportes {
+    border-left-color: #f59e0b;
+}
+
+/* ========================================================= */
+/* --- 4. GESTIÓN (Tablas y Botones) --- */
+/* ========================================================= */
+
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate; /* Cambiado de collapse a separate para mejor borde */
+    border-spacing: 0;
+    margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table th {
+    background-color: #f1f5f9;
+    color: var(--color-text-dark);
+    font-weight: 600;
+}
+
+/* Bordes redondeados para la tabla */
+.data-table tr:first-child th:first-child { border-top-left-radius: 8px; }
+.data-table tr:first-child th:last-child { border-top-right-radius: 8px; }
+.data-table tr:last-child td { border-bottom: none; }
+
+
+.status-aprobado {
+    color: var(--color-success);
+    font-weight: bold;
+}
+
+.status-rechazado {
+    color: var(--color-danger);
+    font-weight: bold;
+}
+
+/* Botón Nuevo/Agregar */
+.btn-new {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.btn-new:hover {
+    background-color: #0ea5e9;
+}
+
+/* Estilos de Acciones (íconos) */
+.data-table td a {
+    color: var(--color-text-dark);
+    margin-right: 10px;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+
+.data-table td a:hover {
+    color: var(--color-accent);
+}
