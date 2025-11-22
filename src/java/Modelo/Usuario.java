@@ -13,6 +13,7 @@ public class Usuario {
     private String username;
     private String password;
     private String nombre_completo;
+    private String email;
     private String nombre_rol; // Para saber si es Admin, Jefe o Inspector
     private int id_rol;
 
@@ -51,6 +52,14 @@ public class Usuario {
         this.nombre_completo = nombre_completo;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getNombre_rol() {
         return nombre_rol;
     }
@@ -66,6 +75,5 @@ public class Usuario {
     public void setId_rol(int id_rol) {
         this.id_rol = id_rol;
     }
-    
 
 }

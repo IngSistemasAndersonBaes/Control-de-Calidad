@@ -25,32 +25,33 @@
 
     <ul class="menu">
         <li>
-            <a href="AdministradorDashboard.jsp" 
-               class="<%= currentURL.endsWith("AdministradorDashboard.jsp") ? "active" : "" %>">
+            <a href="UsuarioServlet?accion=cargarDashboard" 
+               class="<%= currentURL.contains("AdministradorDashboard.jsp") ? "active" : "" %>">
                 <i class="fa-solid fa-chart-line"></i> Dashboard
             </a>
         </li>
         
         <li>
-            <a href="GestionUsuarios.jsp"
-               class="<%= currentURL.endsWith("GestionUsuarios.jsp") ? "active" : "" %>"> 
+            <a href="UsuarioServlet?accion=listarUsuarios"
+               class="<%= currentURL.contains("GestionUsuarios.jsp") ? "active" : "" %>"> 
                 <i class="fa-solid fa-users-gear"></i> Gestión Usuarios
             </a>
         </li>
         
         <li>
-            <a href="GestionInspecciones.jsp"
-               class="<%= currentURL.endsWith("GestionInspecciones.jsp") ? "active" : "" %>">
+            <a href="RevisionServlet?accion=listar"
+               class="<%= currentURL.contains("RevisionServlet") || currentURL.contains("GestionInspecciones.jsp") ? "active" : "" %>">
                 <i class="fa-solid fa-clipboard-check"></i> Inspecciones
             </a>
         </li>
 
         <li>
-            <a href="ReporteServlet?tipo=general">
+            <a href="ReporteServlet"
+               class="<%= currentURL.contains("ReporteServlet") || currentURL.contains("ReportesPDF.jsp") ? "active" : "" %>">
                 <i class="fa-solid fa-file-pdf"></i> Reportes PDF
             </a>
         </li>
-
+        
         <li class="logout-item">
             <a href="UsuarioServlet?accion=Salir">
                 <i class="fa-solid fa-power-off"></i> Cerrar Sesión
