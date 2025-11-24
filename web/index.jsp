@@ -87,7 +87,7 @@
                 <input type="password" name="txtPass" required>
                 <input type="submit" name="accion" value="Ingresar" class="btn">
             </form>
-            <button onclick="toggleForm()" class="btn btn-secondary">Crear Cuenta (Soy nuevo)</button>
+          <%--  <button onclick="toggleForm()" class="btn btn-secondary">Crear Cuenta (Soy nuevo)</button>
         </div>
 
         <div id="registerForm" class="hidden">
@@ -99,7 +99,7 @@
                 <input type="submit" name="accion" value="Registrar" class="btn">
             </form>
             <button onclick="toggleForm()" class="btn btn-secondary">Volver al Login</button>
-        </div>
+        </div>--%>
 
         <p class="alert">${error}</p>
         <p class="success">${mensaje}</p>

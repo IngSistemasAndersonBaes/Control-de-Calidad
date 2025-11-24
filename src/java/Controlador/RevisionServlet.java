@@ -33,6 +33,12 @@ public class RevisionServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        // --- CORRECCIÓN DE CARACTERES ESPECIALES ---
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+        // -------------------------------------------
+        
         String accion = request.getParameter("accion");
         
         // ACCIÓN 1: LISTAR TODO (Por defecto)

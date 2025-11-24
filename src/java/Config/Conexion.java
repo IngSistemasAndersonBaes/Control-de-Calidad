@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Conexion {
-        String url="jdbc:sqlserver://AndersonBaes:50497;databaseName=ControlCalidad;IntegratedSecurity=true;";
+        String url="jdbc:sqlserver://AndersonBaes:50497;databaseName=ControlCalidad;IntegratedSecurity=true;sendStringParametersAsUnicode=true;";
 
     Connection con;
     public Connection getConnection(){
